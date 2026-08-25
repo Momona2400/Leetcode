@@ -122,6 +122,9 @@ public:
             if(i>0 && nums[i] == nums[i-1]) {
                 continue;
             }
+            if(nums[i] > 0) {
+                break;
+            }
             j = i+1;
             k = nums.size()-1;
             while(j < k) {
