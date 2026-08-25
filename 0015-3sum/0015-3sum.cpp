@@ -118,7 +118,7 @@ public:
         sort(nums.begin(), nums.end());
         vector<vector<int>> ans;
         int i, j, k;
-        for(i = 0; i < nums.size(); i++) {
+        for(i = 0; i < nums.size() - 2; i++) {
             if(i>0 && nums[i] == nums[i-1]) {
                 continue;
             }
