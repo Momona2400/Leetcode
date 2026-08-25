@@ -134,24 +134,36 @@ public:
                     ans1.push_back(nums[i]);
                     ans1.push_back(nums[j]);
                     ans1.push_back(nums[k]);
-                    sort(ans1.begin(), ans1.end());
+                    // sort(ans1.begin(), ans1.end());
                     // break;
                     j++;
                     k--;
+                    while(j < k && nums[j] == nums[j-1]) {
+                        j++;
+                    }
+                    while(j < k && nums[k] == nums[k+1]) {
+                        k--;
+                    }
                 }
                 else if(x < 0) {
                     j++;
+                    while(j < k && nums[j] == nums[j-1]) {
+                        j++;
+                    }
                 }
                 else {
                     k--;
+                    while(j < k && nums[k] == nums[k+1]) {
+                        k--;
+                    }
                 }
                 if(!ans1.empty()) {
                     ans.push_back(ans1);
                 }
             }
         }
-        sort(ans.begin(), ans.end());
-        ans.erase(unique(ans.begin(), ans.end()), ans.end());
+        // sort(ans.begin(), ans.end());
+        // ans.erase(unique(ans.begin(), ans.end()), ans.end());
         return ans;
     }
 };
