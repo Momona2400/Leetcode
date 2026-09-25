@@ -6,14 +6,16 @@ public:
         for(int end = 0; end < s.length(); end++) {
             um[s[end]]++;
             if(um[s[end]] > 1) {
-                int idx = s.find(s[end], start);
-                while(start <= idx) {
+                // int idx = s.find(s[end], start);
+                while(s[start] != s[end]) {
                     um[s[start]]--;
                     if(um[s[start]] == 0) {
                         um.erase(s[start]);
                     }
                     start++;
                 }
+                um[s[start]]--;
+                start++;
             }
             ans = max(ans, end-start+1);
         }
