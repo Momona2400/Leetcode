@@ -1,9 +1,6 @@
 class Solution {
 public:
     vector<string> findRepeatedDnaSequences(string s) {
-        // if(s.length() < 10) {
-        //     return 
-        // }
         unordered_map<string, int> um;
         int start = 0;
         for(int end = 9; end < s.length(); end++) {
